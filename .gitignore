@@ -1,0 +1,11 @@
+*.egg-info
+*.pyc
+*.swp
+.DS_Store
+*~
+/dist
+/node_modules
+.idea
+/var
+/.coverage
+/htmlcov
