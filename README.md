@@ -1,6 +1,6 @@
 # Diagrams XBlock
-XBlock for generating diagrams from text. The text is simple markdown-like script language. 
-This is a simple wrapper around mermaid (https://github.com/knsv/mermaid)
+XBlock for generating diagrams from a simple markup language. 
+This is a simple wrapper around [mermaid](https://github.com/knsv/mermaid)
 
 ## Examples
 
@@ -13,8 +13,7 @@ graph LR
     B --> D{Rhombus}
     C --> D
 ```
-
-![Flow Chart](docs/flowchart.png)
+<img src="docs/flowchart.png" alt="Flow Chart" width="500"/>
 
 ### Sequence diagram
 
@@ -29,10 +28,10 @@ sequenceDiagram
     Bob-->Alice: Checking with John...
     Alice->John: Yes... John, how are you?
 ```
+<img src="docs/sequence.png" alt="Sequence diagram" width="700"/>
 
-![Sequence diagram](docs/sequence.png)
-
-See https://mermaidjs.github.io/#/ for more examples and docs.
+### More
+See https://mermaidjs.github.io/ for more examples and docs.
 
 # Installation
 Install the requirements into the python virtual environment of your `edx-platform` installation.
@@ -67,4 +66,4 @@ This name appears in the horizontal navigation at the top of the page.
 
 #### Markup
 Markup is a simple markdown-like script language that is used to generate diagrams.
-for a list of supported diagrams and their syntax please see: https://mermaidjs.github.io/#/
+For a list of supported diagrams and their syntax please see https://mermaidjs.github.io/
