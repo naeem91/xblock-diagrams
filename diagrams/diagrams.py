@@ -19,14 +19,27 @@ class DiagramsXBlock(StudioEditableXBlockMixin, XBlock):
     """
     Xblock for generating diagrams from text
     """
-    markup = String(help=_("XML contents to display for this module"), scope=Scope.content, default=textwrap.dedent("""\
+    display_name = String(
+        display_name=_("Display Name"),
+        help=_("This name appears in the horizontal navigation at the top of the page."),
+        scope=Scope.settings,
+        default=_("Diagrams")
+    )
+    markup = String(
+        display_name='Markup',
+        help=_("Markup for generating diagrams. "
+               "See http://knsv.github.io/mermaid/#/examples for syntax."),
+        multiline_editor=True,
+        resettable_editor=False,
+        scope=Scope.content,
+        default=textwrap.dedent("""\
         <h1>Flowchart</h1>
         <div class="mermaid">
-            graph TD;
-                A-->B;
-                A-->C;
-                B-->D;
-                C-->D;
+            graph LR
+                A[Square Rect] -- Link text --> B((Circle))
+                A --> C(Round Rect)
+                B --> D{Rhombus}
+                C --> D
         </div>
         <h1>Sequence diagram</h1>
         <div class="mermaid">
@@ -44,7 +57,7 @@ class DiagramsXBlock(StudioEditableXBlockMixin, XBlock):
         </div>
         """))
 
-    editable_fields = ('markup',)
+    editable_fields = ('display_name', 'markup',)
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
