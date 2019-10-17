@@ -1,9 +1,1 @@
 /* CSS for DiagramsXBlock */
-
-.diagrams_block .count {
-    font-weight: bold;
-}
-
-.diagrams_block p {
-    cursor: pointer;
-}
